@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-bind 练习  </title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" name="" id="" v-model="message" placeholder="input 输入框熟悉的绑定使用"><br>
+
+        插值表达式的使用: {{message }} <br>
+        <a :href="url">bind 属性的运用 :href [绑定标签的属性]</a><br>
+       
+        {{url}} [插值表达式的使用]
+    </div>
+  
+</body>
+<script>
+    new Vue({
+    el:'#app',
+    data:{
+     message:'hello vue',
+     url:'http://www.baidu.com'
+     },
+    methods :{
+    test:function(){
+    return 'hello'
+    }
+    }
+    })
+</script>
+</html>

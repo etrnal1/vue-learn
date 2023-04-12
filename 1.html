@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据稳定</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{message}}
+      <p>{{data}}</p>
+      <span>{{txt}}</span>  
+      <span v-html="html"></span>
+      <span>{{html}}</span>
+      <button v-bind:disalbed="isButton" >{{attribute}}</button>
+    </div>
+</body>
+<script>
+    var data={a:1}
+    const vm=new Vue({
+    el:'#app',
+    data:{
+     message:'hello vue',
+     data:data,
+     txt:"这是文本插值语法",
+     html:"<p>这里使用v-html指令 渲染html 语法</p>",
+     attribute:"html 属性使用v-bind指令 true false",
+     isButton:true
+    },
+     //创建生命周期
+     created: function () {
+        // `this` 指向 vm 实例
+        console.log('a is: ' + this.a)
+      },
+    methods :{
+        test:function(){
+            return 'hello'
+        }
+      }
+    })
+    vm.a = data.a
+    vm.a=3
+    
+</script>
+</html>
