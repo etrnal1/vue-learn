@@ -1,32 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>点击enter键触发</title>
     <script src="vue.js"></script>
 </head>
+
 <body>
     <div id="app">
         <input v-on:keyup.enter="submit">
+        <p style="white-space: pre-line;">{{ message }}</p>
+        <textarea v-model="message" placeholder="add multiple lines"></textarea><br>
+        <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+        <label for="jack">Jack</label>
+        <input type="checkbox" id="john" value="John" v-model="checkedNames">
+        <label for="john">John</label>
+        <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+        <label for="mike">Mike</label>
+        <br>
+        <span>Checked names: {{ checkedNames }}</span><br>
+
+        <select v-model="selected">
+            <option disabled value="">请选择</option>
+            <option>橘子</option>
+            <option>橙子</option>
+            <option>苹果</option>
+        </select><br>   
+          <span>Selected: {{ selected }}</span>
     </div>
-    
+
 </body>
 <script>
     new Vue({
-    el:'#app',
-    data:{
-     message:'hello vue'
-     },
-    methods :{
-    test:function(){
-    return 'hello'
-    },
-    submit:function(){
-        alert('我是按下回车键进行触发的按键')
-    }
-    }
+        el: '#app',
+        data: {
+            message: '',
+            checkedNames: [],
+            selected: ''
+        },
+        methods: {
+            test: function () {
+                return 'hello'
+            },
+            submit: function () {
+                alert('我是按下回车键进行触发的按键')
+            }
+        }
     })
 </script>
+
 </html>
