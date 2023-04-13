@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用click传递参数,传递event 对象，并在methods方法里面拿到原生对象</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="warn('yet',$event)">{{messages}}</button>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            messages: 'hello vue'
+        },
+        methods: {
+            test: function () {
+                return 'hello'
+            },
+            warn:function(message,event){
+                const ms ='首先打印的是传递的消息:' + message
+                alert(ms)
+                const  ev= '传递的是event对象'+event +'加载的targetname'+event.target.tagName
+                alert(ev)
+            }
+        }
+    })
+</script>
+
+</html>

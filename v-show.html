@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-if的使用,用来控制数据的使用</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app" v-bind:style="[baseStyles, overridingStyles]" >
+        {{message}}
+        <h4 v-if="show">我是v-show的用法
+
+            不同的是带有 v-show 的元素始终会被渲染并保留在 DOM 中。
+            v-show 
+            只是简单地切换元素的 CSS property display。
+            不支持template.
+            也不支持v-else-if v-else 
+        </h1>
+        
+    </div>
+
+</body>
+<script>
+new Vue({
+el:'#app',
+data:{
+ message:'v-if 通过判断show值是ture还是false 来读取真假数据，判断是否显示数据',
+ baseStyles:{ color: 'orange'},
+ show:1,
+
+ overridingStyles:{
+   
+    fontSize: '34px',
+ }
+
+ },
+methods :{
+test:function(){
+return 'hello'
+}
+}
+})
+</script>
+</html>
