@@ -13,6 +13,9 @@
     <div class="static" v-bind:class="{active:isActive}">
         数据状态显示-- 正常
     </div> 
+    <div class="static" v-bind:class="classObject">
+        返回对象的计算属性-- 正常
+    </div> 
     </div>
 </body>
 <script>
@@ -23,6 +26,14 @@
      isActive:true,  
      hasError: false
      },
+    computed:{
+        classObject:function(){
+            return {
+                active: this.isActive && !this.error,
+                'text-danger': this.error && this.error.type === 'fatal'
+            }
+        }
+    },
     methods :{
     test:function(){
     return 'hello'

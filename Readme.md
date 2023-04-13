@@ -132,3 +132,40 @@ v- 前缀作为一种视觉提示，用来识别模板中 Vue 特定的 attribut
 
 Vue 提供了一种更通用的方式来观察和响应 Vue 实例上的数据变动：**侦听属性**。当你有一些数据需要随着其它数据变动而变动时，你很容易滥用 `watch`
 
+
+
+### 绑定样式
+
+V-bind:style     【绑定样式styleObj	】
+
+```html
+ <div id="app" v-bind:style="styleObj">
+        {{message}}
+    </div>
+```
+
+vue.js      [增加对象]
+
+```js
+<script>
+new Vue({
+el:'#app',
+data:{
+ message:'hello vue',
+ styleObj:{
+    color: 'red',
+    fontSize: '34px',
+ }
+
+ },
+methods :{
+test:function(){
+return 'hello'
+}
+}
+})
+</script>
+```
+
+
+
