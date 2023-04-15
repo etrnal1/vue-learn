@@ -340,3 +340,38 @@ Vue.config.keyCodes.f1 = 112
 
 
 这是一个文件名为 `Hello.vue` 的简单实例：
+
+## es6
+
+### async
+
+```js
+function testAwait (x) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(x);
+    }, 2000);
+  });
+}
+ 
+async function helloAsync() {
+  var x = await testAwait ("hello world");
+  console.log(x); 
+}
+helloAsync ();
+// hello world
+```
+
+正常情况下，await 命令后面是一个 Promise 对象，它也可以跟其他值，如字符串，布尔值，数值以及普通函数。
+
+```js
+function testAwait(){
+    console.log("testAwait");
+ }
+ async function helloAsync(){
+    await testAwait();
+    console.log("helloAsync");
+ }
+ helloAsync();
+```
+
